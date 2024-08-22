@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  GITHUB_WORKFLOW: dati-semantic-wordpress
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}    
+
 jobs:
 
   build:
@@ -15,4 +20,34 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ github.repository }}:$(date +%s)
+      run: |
+        IMAGE="$REGISTRY/$IMAGE_NAME"
+        TAG="$(date +'%Y%m%d')-${{github.run_number}}-$(git rev-parse --short HEAD)"
+        docker build . --file Dockerfile --tag ${IMAGE}:${TAG}
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      packages: write
+    needs:
+      - build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: extract image
+        id: extractImage
+        run: |
+          IMAGE="$REGISTRY/$IMAGE_NAME"
+          TAG="$(date +'%Y%m%d')-${{github.run_number}}-$(git rev-parse --short HEAD)"
+          echo "##[set-output name=imageName;]${IMAGE}:${TAG}"
+      - uses: convictional/trigger-workflow-and-wait@v1.3.0
+        with:
+          owner: teamdigitale
+          repo: dati-semantic-kubernetes
+          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          workflow_file_name: update-config.yaml
+          ref: dev
+          wait_interval: 20
+          inputs: '{"serviceName": "dati-semantic-wordpress", "imageWithNewTag": "${{ steps.extractImage.outputs.imageName }}"}'      

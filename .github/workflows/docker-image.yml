@@ -9,14 +9,11 @@ on:
 env:
   GITHUB_WORKFLOW: dati-semantic-wordpress
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}    
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
@@ -25,7 +22,7 @@ jobs:
         TAG="$(date +'%Y%m%d')-${{github.run_number}}-$(git rev-parse --short HEAD)"
         docker build . --file Dockerfile --tag ${IMAGE}:${TAG}
 
-  deploy:
+  publish:
     runs-on: ubuntu-latest
     if: github.event_name != 'pull_request'
     permissions:
@@ -36,12 +33,42 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-      - name: extract image
-        id: extractImage
+
+      - name: Log in to the GitHub Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push Docker image
         run: |
           IMAGE="$REGISTRY/$IMAGE_NAME"
           TAG="$(date +'%Y%m%d')-${{github.run_number}}-$(git rev-parse --short HEAD)"
-          echo "##[set-output name=imageName;]${IMAGE}:${TAG}"
+          docker build . --file Dockerfile --tag ${IMAGE}:${TAG}
+          docker push ${IMAGE}:${TAG}
+          docker tag ${IMAGE}:${TAG} ${IMAGE}:latest
+          docker push ${IMAGE}:latest
+
+      - name: Output image name
+        id: extractImage
+        run: echo "imageName=${IMAGE}:${TAG}" >> $GITHUB_ENV
+
+  deploy:
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: read
+      packages: write
+    needs:
+      - publish
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy using extracted image
+        run: |
+          echo "Deploying image: ${{ env.imageName }}"
       - uses: convictional/trigger-workflow-and-wait@v1.3.0
         with:
           owner: teamdigitale
@@ -50,4 +77,4 @@ jobs:
           workflow_file_name: update-config.yaml
           ref: dev
           wait_interval: 20
-          inputs: '{"serviceName": "dati-semantic-wordpress", "imageWithNewTag": "${{ steps.extractImage.outputs.imageName }}"}'      
+          inputs: '{"serviceName": "dati-semantic-wordpress", "imageWithNewTag": "${{ env.imageName }}"}'

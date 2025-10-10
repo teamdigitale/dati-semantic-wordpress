@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 2.3.1\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en_US\n"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:78
+msgid "0 means unlimited upload."
+msgstr ""
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:118
+msgid "After enable trash, after delete your files will go to trash folder."
+msgstr "After enable trash, after delete your files will go to trash folder."
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:19
+msgid "Dark Slim"
+msgstr "Dark Slim"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:18
+msgid "Default Elfinder"
+msgstr "Default Elfinder"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:77
+msgid "Default:"
+msgstr "Default:"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:88
+msgid "Disable command"
+msgstr "Disable command"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:109
+msgid "Enable Trash?"
+msgstr "Enable Trash?"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:147
+msgid "Enter file extensions which user can be Uploaded"
+msgstr "Enter file extensions which user can be Uploaded"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:135
+msgid "Enter file extensions which you want to Lock"
+msgstr "Enter file extensions which you want to Lock"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:123
+msgid "Enter folder or file paths that you want to Hide"
+msgstr "Enter folder or file paths that you want to Hide"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:8
+msgid "Filester - WordPress File Manager Pro"
+msgstr "Filester - WordPress File Manager Pro"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:92
+msgid "Hide .htaccess?"
+msgstr "Hide .htaccess?"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:55
+msgid "If User Role is"
+msgstr "If User Role is"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:106
+msgid "Insert Root Path"
+msgstr "Insert Root Path"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:74
+msgid "MB"
+msgstr "MB"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:20
+msgid "Material"
+msgstr "Material"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:21
+msgid "Material Gray"
+msgstr "Material Gray"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:22
+msgid "Material Light"
+msgstr "Material Light"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:70
+msgid "Maximum Upload Size"
+msgstr "Maximum Upload Size"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:173
+msgid ""
+"Multiple separated by comma. If left empty, this means user can't upload any "
+"files."
+msgstr ""
+"Multiple separated by comma. If left empty, this means user can't upload any "
+"files."
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:141
+msgid "Multiple separated by vertical bar (|). Eg: .php | .png | .css"
+msgstr "Multiple separated by vertical bar (|). Eg: .php | .png | .css"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:129
+msgid ""
+"Multiple separated by vertical bar (|). Eg: themes/twentytwenty | themes/"
+"avada."
+msgstr ""
+"Multiple separated by vertical bar (|). Eg: themes/twentytwenty | themes/"
+"avada."
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:72
+msgid "Nothing to choose"
+msgstr "Nothing to choose"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:79
+msgid "Please select a User Role at Setings tab to use this option."
+msgstr "Please select a User Role at Setings tab to use this option."
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:53
+msgid "Root Path"
+msgstr "Root Path"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:101
+msgid "Root Path for this User Role"
+msgstr "Root Path for this User Role"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:31
+msgid "Select User Roles to access"
+msgstr "Select User Roles to access"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:85
+msgid "Select language"
+msgstr "Select language"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:15
+msgid "Select theme:"
+msgstr "Select theme:"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:20
+msgid "Settings"
+msgstr "Settings"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:21
+msgid "User Role Restrictions"
+msgstr "User Role Restrictions"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-settings.php:103
+msgid "Will Hide .htaccess file (if exists) in file manager."
+msgstr "Will Hide .htaccess file (if exists) in file manager."
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager.php:23
+msgid "Windows 10"
+msgstr "Windows 10"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:165
+msgid "adobe"
+msgstr "adobe"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:163
+msgid "archives"
+msgstr "archives"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:161
+msgid "audio"
+msgstr "audio"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:167
+msgid "clear all"
+msgstr "clear all"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:157
+msgid "images"
+msgstr "images"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:155
+msgid "office"
+msgstr "office"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:153
+msgid "text"
+msgstr "text"
+
+#. Text in echo
+#: wp-file-manager/views/pages/html-filemanager-user-role-restrictions.php:159
+msgid "video"
+msgstr "video"

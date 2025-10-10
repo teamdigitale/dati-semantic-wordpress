@@ -1,0 +1,21 @@
+.item {
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #f2f7fc;
+}
+
+.itemIcon {
+  margin-left: 110px;
+}
+
+.itemLabel {
+  font-size: 20px;
+}
+
+@media (width: 1200px) {
+  .customCard {
+    height: 10em;
+  }
+}

@@ -1,0 +1,728 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.cnd-section {
+    display: flex;            /* Abilita il layout flex */
+    flex-direction: column;   /* Dispone gli elementi figli verticalmente */
+    justify-content: center;  /* Centra gli elementi verticalmente */
+    align-items: center;      /* Centra gli elementi orizzontalmente */
+    width: 100%;              /* Larghezza al 100% */
+    padding: 0;            /* Spaziatura interna (modificabile) */
+}
+
+/* Contenitore della checkbox */
+.checkbox-container {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 0px solid #ccc;
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.15);
+    padding: 0;
+}
+
+/* Stile per l'etichetta della checkbox */
+.checkbox-container label {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    cursor: pointer;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.2em;
+
+}
+
+input.form-check-input {
+    margin-right: 8px !important;
+    min-width: 17px;
+}
+
+/* Peso del font quando la checkbox è selezionata */
+.checkbox-container label:has(input[type="checkbox"]:checked) {
+    font-weight: 600;
+}
+
+/* Hover sull'etichetta */
+.checkbox-container label:hover {
+    background-color: #e6f0ff;
+}
+
+
+.cnd-srch-res-box {
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-around;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cnd-cr-body {
+    display: flex;            /* Imposta il layout Flexbox */
+    flex-direction: column;   /* Imposta la direzione degli elementi figlio in colonna */
+    justify-content: flex-end; /* Allinea gli elementi figlio alla fine del contenitore (basso) */
+    align-items: flex-start;  /* Allinea gli elementi figlio all'inizio dell'asse trasversale (sinistra) */
+    height: 100%;             /* Imposta un'altezza definita per assicurare l'allineamento verso il basso */
+}
+
+.cnd-src-res-item {
+    padding: 24px;
+        display: flex;            /* Imposta il layout Flexbox */
+    flex-direction: column;   /* Imposta la direzione degli elementi figlio in colonna */
+    justify-content: space-between; /* Distribuisce lo spazio tra i figli in modo che uno sia all'inizio e l'altro alla fine */
+    height: 100%; 
+}
+
+
+p.cnd-description {
+    font-family: 'Lora';
+    font-weight: 400;
+    color: #2f475e;
+    line-height: 1.4em;
+    font-size: var(--ist-16);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    max-height: calc(1.4em * 2); /* Altezza massima di 2 righe */
+}
+
+
+.select-container {
+    position: relative;
+}
+.select-box::after {
+    content: '\25BC';
+    position: absolute;
+    right: 10px;
+    top: 14px;
+    font-size: 12px;
+}
+
+.cnd-col-sel-cnt {
+    border: 1px solid #D9DADB;
+    padding: 4px;
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    max-width: 270px;
+    border-radius: 3px;
+}
+
+.columns-button {
+    background-color: white;
+    color: #003366;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.columns-button .icon-columns {
+    font-weight: bold;
+}
+
+.columns-button.active {
+    background-color: #0066CC;
+    color: white;
+}
+
+.columns-button:focus {
+    outline: 2px solid #0066CC;
+    outline-offset: 2px;
+}
+
+.cnd-src-col-lts {
+    display: flex;
+    flex-direction: column;  /* Assicura che i figli siano allineati verticalmente */
+
+}
+
+/* Per allineare tutti gli elementi al fondo */
+.cnd-src-col-lts > :first-child {
+    margin-top: auto;
+}
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.chip {
+    background-color: #ffffff;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: #0066cc;
+    font-weight: 600;
+    border: 2px solid #0066cc;
+    border-radius: 200px;
+    cursor: pointer;
+}
+
+.chip:hover {
+    background-color: #0066CC !important;
+    border-color: #0066CC !important;
+    color: white; /* Aggiungi questo se vuoi cambiare anche il colore del testo */
+}
+
+.chip .close-button {
+    margin-left: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.chip .close-button:hover {
+    background-color: #0066CC !important;
+    color: white; /* Aggiungi questo se vuoi cambiare anche il colore del testo del pulsante di chiusura */
+}
+
+.chip-small {
+    font-family: Titillium Web;
+  font-size: 16px;
+  color: #0066cc;
+  font-weight: 600;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border-top-color: #0066cc;
+  border-right-color: #0066cc;
+  border-bottom-color: #0066cc;
+  border-left-color: #0066cc;
+  border-top-width: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-radius:
+100px;
+}
+
+
+.columns-button {
+    background-color: white;
+    color: #003366;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.columns-button .icon-columns {
+    font-weight: bold;
+    filter: invert(0%); /* Assicura che l'icona sia blu scuro */
+}
+
+.columns-button.active .icon-columns {
+    filter: invert(100%); /* Cambia il colore dell'icona in bianco */
+}
+
+.columns-button.active {
+    background-color: #0066CC;
+    color: white;
+}
+
+h3.cnd-crd-ttl {
+    font-size: var(--ist-24);
+    font-weight: 600;
+    line-height: 1.3em;
+    color: #0066cc;
+    padding-bottom: 6px;
+}
+
+.cnd-crd-dsc {
+    padding-bottom : 12px;
+}
+
+.search-noresults {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-height: 600px;
+    padding: 70px 40px;
+}
+
+h3.h3-nr {
+    color: #0066CC;
+    font-size: var(--ist-40);
+    line-height: 1.1em;
+    font-weight: 700;
+    text-align: center;
+}
+
+p.txt-nr {
+    color: #1A1A1A;
+    font-size: var(--ist-24);
+    font-weight: 600;
+    text-align: center;
+    max-width: 650px;
+}
+
+.chip-status {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 24px;
+    border: 1px solid;
+    background-color: #ffffff;
+    border-radius: 200px;
+    margin: 0px 8px;
+}
+
+span.chip-status.chip-green {
+    color: #0B7E18;
+    border: 1px solid #0B7E18;
+}
+span.chip-status.chip-grey {
+    color: #5f5f5f;
+    border: 1px solid #5f5f5f;
+}
+
+.cnd-crd-srch-rs-top {
+    display: flex;           /* Imposta il layout Flexbox */
+    align-items: flex-start; /* Allinea gli elementi figlio a sinistra */
+    margin-bottom: var(--ist-24);
+}
+
+.align-vert {
+    display: flex;            /* Abilita il layout Flexbox */
+    justify-content: center;  /* Centra gli elementi lungo l'asse verticale */
+    align-items: center !important;      
+
+}
+.cnd-themes-list {
+      display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-top: 2px;
+  margin-bottom: 12px;
+  max-width: 100%;
+    
+}
+
+.it-card-title {
+    font-size: 20px;       /* Dimensione del font */
+    color: #1A1A1A;        /* Colore del testo */
+    font-weight: 600;      /* Peso del font (semi-grassetto) */
+    line-height: 1.3;      /* Altezza della linea per una migliore leggibilità */
+    margin: 0;
+    margin-bottom: 24px;/* Rimuove il margine predefinito (opzionale) */
+}
+
+.cnd-sc-box {
+    padding: 16px 18px;   /* Spaziatura interna: 16px sopra e sotto, 18px a sinistra e destra */
+    font-size: 18px;      /* Dimensione del font */
+}
+
+.cnd-crd-lst div {
+line-height: 1.2em;
+  margin-bottom: 0px;
+  margin-left: 6px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%;
+}
+
+.cnd-themes-list div.cnd-themes-list-pdv {
+  line-height: 1.2em;
+  margin-bottom: 0px;
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%;  
+}
+
+.cnd-crd-lst {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.cnd-src-res-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F2F7FC;
+    height: 48px;
+    padding: 14px 24px;
+}
+
+.cnd-pre-res-date img {
+    margin-right: 4px;
+    
+}
+
+.cnd-pre-res-date {
+    color: #003366;
+    font-size: 16px;
+}
+
+.cnd-date {
+    color: #003366;
+}
+
+/***/
+
+.btn.btn-vocabulary {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #077F7B;
+}
+
+.btn.btn-ontology {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #485DB4;
+}
+
+.btn.btn-schema {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #D8A004;
+}
+
+.cnd-btn-primary {
+    color: #ffffff;
+    padding: 4px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+        cursor: default;
+        margin-right: 10px;
+}
+
+
+/* Imposta il cursore come predefinito e disabilita gli eventi del mouse */
+.cnd-btn-primary,
+.btn-vocabulary,
+.btn-schema,
+.btn-ontology {
+    cursor: default;           /* Mantiene il cursore standard */
+    pointer-events: none;      /* Disabilita gli eventi del mouse (se necessario) */
+}
+
+/* Rimuove qualsiasi effetto hover, focus e active */
+.cnd-btn-primary:hover,
+.cnd-btn-primary:focus,
+.cnd-btn-primary:active,
+.btn-vocabulary:hover,
+.btn-vocabulary:focus,
+.btn-vocabulary:active,
+.btn-schema:hover,
+.btn-schema:focus,
+.btn-schema:active,
+.btn-ontology:hover,
+.btn-ontology:focus,
+.btn-ontology:active {
+    background-color: inherit; /* Mantiene lo sfondo invariato */
+    color: inherit;            /* Mantiene il colore invariato */
+    border-color: inherit;     /* Mantiene il bordo invariato */
+    box-shadow: none;          /* Rimuove ombre o altri effetti visivi */
+}
+
+.cnd-progress-cnt {
+ height: 10px; 
+ width: 100%;
+}
+.cnd-progress-bar {
+    height: 100%;
+}
+
+.cnd-dtl-bg {
+
+    z-index: 10;
+}
+
+.cnd-dt-hd {
+    padding-top: 32px;
+    padding-bottom: 72px;
+    display: flex;            /* Imposta il layout come flexbox */
+    flex-direction: column;   /* Dispone gli elementi in verticale */
+    justify-content: center;  /* Allinea i figli al centro lungo l'asse verticale */ 
+    align-items: center;      /* Allinea i figli al centro lungo l'asse orizzontale */
+}
+
+.cnd-dt-hd .ist-container {
+       display: flex;            /* Imposta il layout come flexbox */
+    flex-direction: column;   /* Dispone gli elementi in verticale */
+    justify-content: center;  /* Allinea i figli al centro lungo l'asse verticale */  
+}
+
+.cnd-progress-cnt {
+    background-color: #52E0DB; /* Colore di sfondo per chiarezza */
+    position: sticky;
+    top: 49px; /* Adatta questo valore in base all'altezza dell'header */
+    z-index: 90;
+}
+
+html {
+    scroll-padding-top: 100px; /* Adatta questo valore all'altezza della navbar */
+}
+
+.cnd-data {
+    font-family: 'Roboto Mono', monospace;
+}
+
+.cnd-sticky {
+        position: sticky;
+             top: 100px;
+}
+
+#navbar {
+
+    top: 100px; /* Deve corrispondere alla posizione della progress bar */
+    height: auto; /* Altezza calcolata dinamicamente */
+   /* overflow-y: auto;  Abilita lo scrolling se il contenuto è lungo */
+    z-index: 8; /* Sotto alle sezioni sticky principali */
+}
+
+/* Breadcrumb Styles */
+.breadcrumb {
+    font-size: 18px;
+    color: #2F475E;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.breadcrumb-item a {
+    font-weight: 600;
+    color: #17324D;
+        text-decoration: underline;
+}
+
+.breadcrumb-sliced {
+    display: inline-block;       /* Necessario per limitare la larghezza */
+    max-width: 22ch;             /* Limita il testo a 22 caratteri */
+    white-space: nowrap;         /* Evita il ritorno a capo */
+    overflow: hidden;            /* Nasconde il testo in eccesso */
+    text-overflow: ellipsis;     /* Aggiunge i puntini di sospensione (...) */
+    vertical-align: middle;      /* Allinea verticalmente al centro (opzionale) */
+}
+
+.cnd-dt-hd-meta {
+font-family: 'Titillium Web';
+    font-size: 16px;       /* Dimensione del font */
+    color: #1A1A1A;        /* Colore del testo */
+    font-weight: 400;      /* Peso del font */
+}
+
+.cnd-dt-hd-meta b {
+    font-weight: 600;   
+}
+
+.icon {
+    margin-bottom: 3px;
+    
+}
+
+.cnd-dvd {
+    height: 100%;
+    width: 1px;
+ color: #5C6F82;
+ margin-right: 16px;
+ margin-left: 16px;
+}
+
+.custom-icon {
+    width: 15px;            /* Imposta una larghezza più piccola */
+    height: 15px;           /* Imposta un'altezza più piccola */
+    fill: #0066CC;     /* Cambia il colore dell'icona */
+    margin: 0 5px;
+    margin-bottom: 2px;
+} 
+.custom-arrow-left {
+       fill: #0066CC;  
+    
+}
+.custom-external-link-icon {
+        width: 20px;            /* Imposta una larghezza più piccola */
+    height: 20px;
+    fill: #ffffff;
+}
+
+a:hover .custom-external-link-icon {
+    fill: #0066CC;
+}
+
+.custom-box-arrow-down {
+        width: 13px;            /* Imposta una larghezza più piccola */
+    height: 13px; 
+    fill: #0066CC;
+}
+a.btn-main-ngt:hover .custom-box-arrow-down {
+    fill: #ffffff;
+}
+
+.cnd-bk-btn {
+    color: #0066CC;        /* Colore del testo */
+    font-size: 14px;       /* Dimensione del font */
+    font-weight: 600;      /* Peso del font (semi-grassetto) */
+    padding: 0 0;     /* Spaziatura interna (modificabile) */
+    transition: background-color 0.3s ease; /* Effetto di transizione */
+
+}
+
+.cnd-bk-btn:hover {
+        text-decoration: underline;
+}
+
+.btn-main-ngt {
+  background-color: #ffffff;
+  color: #0066cc;
+border: 2px solid #0066cc;
+margin: 0 6px;
+}
+.btn-main-ngt:hover {
+  background-color: #0066cc;
+  color: #ffffff;
+border: 2px solid #0066cc;
+}
+
+/* Navbar Styles */
+#navbar .nav-link {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0066CC;
+    padding: 10px 0;
+}
+
+#navbar .nav-link:active, 
+#navbar .nav-link:focus {
+    color: #003366;
+}
+#navbar .nav-link:hover {
+    color: #003366;
+}
+
+#navbar ul li a.active {
+    border-right: 2px solid #003366;
+}
+
+ul.nav {
+    border-right: 1px solid #C5C7C9;
+    
+}
+
+
+/* Nasconde .columnsContainer sotto ai 1200px */
+@media (max-width: 1200px) {
+    #columnsContainer {
+        display: none;
+    }
+}
+
+.dropdown-menu {
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0px 3px 15px 0px rgba(0,0,0,.1);
+    z-index: 8;
+    padding: 0.5rem 0;
+    min-width: 200px;
+}
+
+/* Stili per il dropdown e i suoi elementi */
+.btn-dropdown {
+    color: #333 !important;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.btn-dropdown:hover,
+.btn-dropdown:focus {
+    color: #333 !important;
+    text-decoration: none;
+    background: none;
+}
+
+#current-selection {
+    color: #333 !important;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.dropdown-item {
+    color: #333 !important;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: #333 !important;
+    background-color: #f8f9fa;
+    text-decoration: none;
+}
+
+/* Stile per l'elemento attivo nel dropdown */
+.dropdown-item[aria-current="true"] {
+    background-color: #f8f9fa;
+    color: #0066cc !important;
+    font-weight: 500;
+}
+
+.link-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.link-list-wrapper {
+    padding: 0;
+}

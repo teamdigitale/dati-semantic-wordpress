@@ -1,0 +1,9 @@
+vime-settings-control.hidden {
+  display: none;
+}
+vime-settings-control svg {
+  transition: transform 0.3s ease;
+}
+vime-settings-control.active svg {
+  transform: rotate(90deg) !important;
+}

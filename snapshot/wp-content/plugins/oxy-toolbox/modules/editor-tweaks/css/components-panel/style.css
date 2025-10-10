@@ -1,0 +1,58 @@
+.otb-components-panel {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1001;
+	flex-wrap: wrap;
+	background-color: #171a1d;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	-webkit-transform: translate(-50%, 10px);
+	transform: translate(-50%, -658px);
+	padding: 20px 20px 0 20px;
+	transition: 0.3s;
+	max-width: 780px;
+	max-height: 670px;
+	overflow-y: scroll;
+	border-bottom: 12px solid #000;
+}
+
+.otb-components-panel:not(.clickable):hover,
+.otb-components-panel.active {
+	-webkit-transform: translate(-50%, 0);
+			transform: translate(-50%, 0);
+}
+
+.otb-control-group {
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	border: 1px dashed #444;
+	padding: 5px;
+}
+
+.otb-control-group-heading {
+	font-size: 13px;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	letter-spacing: 1px;
+	color: #878f96;
+}
+
+.otb-controls {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.otb-components-panel .oxygen-add-section-element {
+	width: auto;
+	padding-left: 4px;
+	padding-right: 4px;
+}

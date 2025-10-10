@@ -1,0 +1,143 @@
+.oxyextras-settings input[type="checkbox"] {
+    appearance: none;
+    background-color: #eaecef;
+    border: none;
+    border-radius: 16px;
+    box-shadow: none;
+    cursor: pointer;
+    height: 16px;
+    margin: 0 4px 0 0;
+    outline: none;
+    padding: 0;
+    width: 26px;
+}
+.oxyextras-settings .plugins input[type="checkbox"]:before {
+    -webkit-appearance: none;
+    background-color: #9da8b2;
+    border-radius: 12px;
+    content: "";
+    cursor: pointer;
+    display: block;
+    height: 12px;
+    left: 2px;
+    margin: 0;
+    position: relative;
+    top: 2px;
+    transition: 0.1s;
+    transition: all 0.2s ease-out;
+    width: 12px;
+}
+.oxyextras-settings input[type="checkbox"]:checked {
+    background-color: #2271b1;
+}
+.oxyextras-settings input[type="checkbox"]:checked:before {
+    background-color: #fff;
+    content: "";
+    left: 0;
+    opacity: 1;
+    transform: translateX(100%);
+}
+.oxyextras-settings textarea.bricks-code {
+    font-family: Consolas, monaco, Courier New, monospace;
+}
+
+.oxyextras-settings .plugin-update-tr.active td, 
+.oxyextras-settings .plugins .active th.check-column {
+    border-left: none;
+}
+
+.oxyextras-settings .plugins tbody th.check-column,
+.oxyextras-settings .plugins thead td.check-column  {
+    padding: 10px 0px 10px 10px;
+}
+
+.oxyextras-settings table.widefat {
+    border: 1px solid #ddd;
+    box-shadow: none;
+}
+
+.oxyextras-settings .plugins .inactive th,
+.oxyextras-settings .plugins .inactive td,
+.oxyextras-settings .plugins .active th,
+.oxyextras-settings .plugins .active td,
+.oxyextras-settings .plugins tr.active+tr.inactive td, 
+.oxyextras-settings .plugins tr.active+tr.inactive th {
+    border-bottom: 1px solid #f1f1f1;
+    box-shadow: none;
+}
+
+.oxyextras-settings .plugins .inactive:last-child th,
+.oxyextras-settings .plugins .inactive:last-child td,
+.oxyextras-settings .plugins .active:last-child th,
+.oxyextras-settings .plugins .active:last-child td,
+.oxyextras-settings .plugins tr.active+tr.inactive:last-child td, 
+.oxyextras-settings .plugins tr.active+tr.inactive:last-child th {
+    border: none;
+}
+
+.oxyextras-settings .plugins tr.active+tr.inactive td, 
+.oxyextras-settings .plugins tr.active+tr.inactive th, 
+.oxyextras-settings .plugins tr.active.plugin-update-tr+tr.inactive td, 
+.oxyextras-settings .plugins tr.active.plugin-update-tr+tr.inactive th {
+    border-top: 0;
+}
+
+
+.oxyextras-settings .widefat thead td, 
+.oxyextras-settings .widefat thead th {
+    border-color: #ddd;
+}
+
+.oxyextras-settings .widefat td,
+.oxyextras-settings p.doc-link {
+    line-height: 1.8;
+}
+
+.oxyextras-settings td.plugin-title strong {
+    margin-bottom: 0;
+}
+
+.oxyextras-settings .plugins .active td, 
+.oxyextras-settings .plugins .active th {
+    background-color: #F6F7F8;
+}
+
+.oxyextras-settings .plugins, 
+.oxyextras-settings .plugins td, 
+.oxyextras-settings .plugins th {
+    color: #3c434a;
+}
+
+.oxyextras-settings .changelog-entry {
+    background-color: #fff; 
+    padding: 15px 20px; 
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.oxyextras-settings .changelog-entry h3 {
+    margin-top: 0.5em;
+}
+
+.oxyextras-settings .changelog-entry li:last-child,
+.oxyextras-settings .changelog-entry ul:last-child {
+    margin-bottom: 0;
+}
+
+.oxyextras-settings .nav-tab {
+    padding-left: 25px;
+    padding-right: 25px;
+    transition: background-color .3s ease;
+}
+
+@media screen and (max-width: 782px) {
+
+    .oxyextras-settings .form-plugin-links {
+        flex-direction: column;
+    }
+
+    #wpbody-content .oxyextras-settings .wp-list-table.plugins td {
+        display: table-cell;
+    }
+
+}

@@ -1,0 +1,147 @@
+<?php
+/**
+ * Plugin Name: Matomo Stats JSON API
+ * Description: Fornisce un endpoint JSON con dati aggregati da Matomo.
+ * Version: 1.0
+ * Author: Il Tuo Nome
+ */
+
+// Definizione delle costanti
+define('MATOMO_API_URL', 'https://analytics.istat.it/?module=API');
+define('MATOMO_TOKEN', 'ef124ba7d106b8f55d64670f506b8ac6');
+define('MATOMO_SITE_ID', 33);
+define('MATOMO_USER', 'dtd');
+define('MATOMO_PASS', 'NDCstats2024');
+
+// Aggiunge un endpoint custom tipo /wp-json/matomo/v1/stats
+add_action('rest_api_init', function () {
+    register_rest_route('matomo/v1', '/stats', [
+        'methods' => 'GET',
+        'callback' => 'get_matomo_stats_json',
+        'permission_callback' => '__return_true'
+    ]);
+});
+
+/**
+ * Esegue una richiesta all'API Matomo
+ *
+ * @param string $method Il metodo API da chiamare
+ * @param array $params Parametri aggiuntivi per la richiesta
+ * @param string $segment Segmento aggiuntivo per la richiesta
+ * @return array|WP_Error I dati della risposta o un errore
+ */
+function matomo_fetch($method, $params = [], $segment = '') {
+    $common = [
+        'idSite' => MATOMO_SITE_ID,
+        'period' => 'day',
+        'date' => 'today',
+        'format' => 'json',
+        'token_auth' => MATOMO_TOKEN,
+        'module' => 'API',
+        'method' => $method
+    ];
+
+    // Add segment if provided
+    if (!empty($segment)) {
+        $common['segment'] = $segment;
+    }
+
+    $postData = array_merge($common, $params);
+    
+    $ch = curl_init(MATOMO_API_URL);
+    if ($ch === false) {
+        error_log('Failed to initialize cURL');
+        return new WP_Error('matomo_curl_init_error', 'Failed to initialize cURL');
+    }
+
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query($postData),
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_USERPWD => MATOMO_USER . ':' . MATOMO_PASS,
+        CURLOPT_HTTPAUTH => CURLAUTH_BASIC,
+        CURLOPT_CONNECTTIMEOUT => 10,
+        CURLOPT_FAILONERROR => true
+    ]);
+    
+    $result = curl_exec($ch);
+    $error = curl_error($ch);
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($error) {
+        error_log('Matomo API Error: ' . $error);
+        return new WP_Error('matomo_api_error', $error);
+    }
+    
+    if ($http_code !== 200) {
+        error_log('Matomo API HTTP Error: ' . $http_code . ' - ' . $result);
+        return new WP_Error('matomo_api_http_error', "HTTP $http_code: $result");
+    }
+
+    $decoded_result = json_decode($result, true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        error_log('Matomo API JSON decode error: ' . json_last_error_msg());
+        return new WP_Error('matomo_json_error', 'Failed to decode API response');
+    }
+    
+    return $decoded_result;
+}
+
+/**
+ * Funzione che chiama Matomo e costruisce il JSON
+ *
+ * @return WP_REST_Response|WP_Error
+ */
+function get_matomo_stats_json() {
+    $response = [];
+    $errors = [];
+
+    // Define segments for internal/external visitors
+    $external_segment = 'visitIp<10.18.0.1,visitIp>10.18.255.254';
+    $internal_segment = 'visitIp>=10.18.0.1,visitIp<=10.18.255.254';
+
+    // Raccolta dei dati con gestione degli errori
+    $summary = matomo_fetch('VisitsSummary.get', [], $external_segment);
+    if (is_wp_error($summary)) {
+        $errors[] = 'Failed to fetch summary data: ' . $summary->get_error_message();
+    } else {
+        $response['summary'] = $summary;
+    }
+
+    $pages = matomo_fetch('Actions.getPageUrls', [], $external_segment);
+    if (is_wp_error($pages)) {
+        $errors[] = 'Failed to fetch pages data: ' . $pages->get_error_message();
+    } else {
+        $response['pages'] = $pages;
+    }
+
+    $referrers = matomo_fetch('Referrers.getReferrerType', [], $external_segment);
+    if (is_wp_error($referrers)) {
+        $errors[] = 'Failed to fetch referrers data: ' . $referrers->get_error_message();
+    } else {
+        $response['referrers'] = $referrers;
+    }
+
+    if (!empty($errors)) {
+        return new WP_Error('matomo_api_error', implode(', ', $errors), ['status' => 500]);
+    }
+
+    return rest_ensure_response($response);
+}
+
+function display_matomo_stats() {
+    $response = wp_remote_get(home_url('/wp-json/matomo/v1/stats'));
+    
+    if (is_wp_error($response)) {
+        return 'Errore nel recupero dei dati Matomo';
+    }
+    
+    $body = wp_remote_retrieve_body($response);
+    $data = json_decode($body, true);
+    
+    // Ora puoi usare $data come preferisci
+    return '<pre>' . print_r($data, true) . '</pre>';
+}

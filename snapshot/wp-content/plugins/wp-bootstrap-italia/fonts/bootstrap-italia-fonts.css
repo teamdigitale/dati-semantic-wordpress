@@ -1,0 +1,51 @@
+/* Font: Italic */
+@font-face {
+    font-family: 'Italic';
+    src: url('../fonts/Italic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Italic.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Italic.svg#Italic') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Font: Bold */
+@font-face {
+    font-family: 'Bold';
+    src: url('../fonts/Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Bold.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Bold.svg#Bold') format('svg'); /* Legacy iOS */
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Font: Regular */
+@font-face {
+    font-family: 'Regular';
+    src: url('../fonts/Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Regular.svg#Regular') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Esempio di utilizzo dei font */
+body {
+    font-family: 'Regular', Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bold', Arial, sans-serif;
+}
+
+em {
+    font-family: 'Italic', Arial, sans-serif;
+}

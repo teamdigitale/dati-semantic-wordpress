@@ -1,0 +1,35 @@
+vime-playground {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+vime-playground .container {
+  width: 100%;
+  max-width: 960px;
+}
+vime-playground .buttons, vime-playground .checkboxes {
+  margin-top: 24px;
+}
+vime-playground .buttons > *, vime-playground .checkboxes > * {
+  margin-left: 8px;
+}
+vime-playground .buttons > *:first-child, vime-playground .checkboxes > *:first-child {
+  margin-left: 0px;
+}
+vime-playground .inputs {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+}
+vime-playground .inputs > input[readonly] {
+  background-color: #f0f0f0;
+}
+vime-playground .inputs > label {
+  margin-top: 16px;
+  margin-bottom: 8px;
+}

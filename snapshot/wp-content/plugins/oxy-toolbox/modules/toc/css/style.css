@@ -1,0 +1,61 @@
+.collapsible {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.toc-title {
+	font-size: 20px;
+}
+
+.toc-list {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-out;
+}
+
+.collapsible:after {
+	content: '\02795'; /* Unicode character for "plus" sign (+) */
+	font-size: 13px;
+	color: white;
+	float: right;
+	margin-left: 5px;
+}
+
+.active:after {
+	content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+ul[class].toc,
+ol[class].toc {
+	background-color: #fafafa;
+	padding: 20px 30px 20px 20px;
+	margin: 0;
+	list-style: none;
+}
+
+.toc li:not(:last-child) {
+	margin-bottom: 5px;
+}
+
+.toc > li:not(:last-child) {
+	margin-bottom: 16px;
+}
+
+.toc > li ul,
+.toc > li ol {
+	margin-top: 10px;
+}
+
+.atomic-simple-article-content span .toc-list ul li:before {
+	display: none;
+}

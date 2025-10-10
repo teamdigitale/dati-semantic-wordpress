@@ -1,0 +1,6 @@
+vime-vimeo > vime-embed.hideControls {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: var(--vm-media-z-index);
+}

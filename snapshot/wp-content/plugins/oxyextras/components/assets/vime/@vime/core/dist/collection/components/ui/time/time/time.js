@@ -1,0 +1,80 @@
+import { h, Host, Component, Prop, } from '@stencil/core';
+import { formatTime } from '../../../../utils/formatters';
+export class Time {
+  constructor() {
+    /**
+     * The length of time in seconds.
+     */
+    this.seconds = 0;
+    /**
+     * Whether the time should always show the hours unit, even if the time is less than
+     * 1 hour (eg: `20:35` -> `00:20:35`).
+     */
+    this.alwaysShowHours = false;
+  }
+  render() {
+    return (h(Host, { "aria-label": this.label }, formatTime(Math.max(0, this.seconds), this.alwaysShowHours)));
+  }
+  static get is() { return "vime-time"; }
+  static get originalStyleUrls() { return {
+    "$": ["time.css"]
+  }; }
+  static get styleUrls() { return {
+    "$": ["time.css"]
+  }; }
+  static get properties() { return {
+    "label": {
+      "type": "string",
+      "mutable": false,
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
+      "required": true,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "The `aria-label` property of the time."
+      },
+      "attribute": "label",
+      "reflect": false
+    },
+    "seconds": {
+      "type": "number",
+      "mutable": false,
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "The length of time in seconds."
+      },
+      "attribute": "seconds",
+      "reflect": false,
+      "defaultValue": "0"
+    },
+    "alwaysShowHours": {
+      "type": "boolean",
+      "mutable": false,
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
+      "required": false,
+      "optional": false,
+      "docs": {
+        "tags": [],
+        "text": "Whether the time should always show the hours unit, even if the time is less than\n1 hour (eg: `20:35` -> `00:20:35`)."
+      },
+      "attribute": "always-show-hours",
+      "reflect": false,
+      "defaultValue": "false"
+    }
+  }; }
+}

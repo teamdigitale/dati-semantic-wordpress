@@ -1,0 +1,17 @@
+/**
+* @prop --vm-ui-z-index: The position in the root z-axis stack inside the player.
+*/
+vime-ui {
+  pointer-events: none;
+  width: 100%;
+  z-index: var(--vm-ui-z-index);
+}
+vime-ui.hidden {
+  display: none;
+}
+vime-ui.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}

@@ -1,0 +1,293 @@
+.oxygen-control-wrapper {
+	position: relative;
+}
+
+.oxygen-control-row .oxygen-control-wrapper {
+	flex-basis: 100%;
+}
+
+.oxygen-control > .oxygen-measure-box .oxygen-measure-box-unit-selector {
+	position: static;
+	pointer-events: none;
+}
+
+.oxygen-control > .oxygen-measure-box .oxygen-measure-box-units {
+	display: flex;
+	left: auto;
+	top: -4px;
+	right: 0;
+	width: auto;
+	background: none;
+	pointer-events: auto;
+	z-index: 98 /* added on Tuesday, March 23, 2021 */
+}
+
+.oxygen-control > .oxygen-measure-box .oxygen-measure-box-selected-unit {
+	opacity: 1;
+}
+
+.oxygen-measure-box .oxygen-measure-box-units div {
+	opacity: 0.7;
+	color: #fdfdfd;
+}
+
+.oxygen-control > .oxygen-measure-box .oxygen-measure-box-units div:hover {
+	opacity: 1;
+	background-color: transparent;
+	color: #43A3FC;
+}
+
+.oxygen-control .oxygen-four-sides-measure-box .oxygen-measure-box {
+	width: 50%;
+}
+
+.oxygen-control .oxygen-four-sides-measure-box .oxygen-four-sides-measure-box-left-right .oxygen-measure-box {
+	width: 48%;
+}
+
+/* Advanced → Layout Begin */
+
+.oxygen-four-sides-measure-box.oxygen-four-sides-measure-box-labels > div:not(.oxygen-four-sides-measure-box-left-right) {
+  width: 100%;
+}
+
+.oxygen-four-sides-measure-box.oxygen-four-sides-measure-box-labels .oxygen-four-sides-measure-box-left-right > div {
+  width: 50%;
+}
+
+.layout .oxygen-control .oxygen-four-sides-measure-box .oxygen-four-sides-measure-box-left-right .oxygen-measure-box {
+  width: 66%;
+}
+
+/* Advanced → Layout End */
+
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-letter-spacing .oxygen-measure-box-units,
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-oxy-pro-menu_-oxy-pro-menu-list .oxygen-measure-box-units,
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-oxy-pro-menu_slug_oxypromenulistmenuitema_border_radius .oxygen-measure-box-units,
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-oxy-cart-counter_-oxy-cart-counter-count_typography_letter-spacing .oxygen-measure-box-units {
+	left: auto;
+	top: 20px;
+}
+
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-letter-spacing,
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-oxy-pro-menu_-oxy-pro-menu-list,
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-oxy-pro-menu_slug_oxypromenulistmenuitema_border_radius,
+.oxygen-control > .oxygen-measure-box.oxygen-measure-box-option-oxy-cart-counter_-oxy-cart-counter-count_typography_letter-spacing {
+	margin-top: 22px;
+}
+
+
+/* Font Weight control for Heading and Text components */
+
+.oxygen-control-wrapper.oxygen-ct_headline-font-weight .oxygen-select-box-options,
+.oxygen-control-wrapper.oxygen-ct_text_block-font-weight .oxygen-select-box-options {
+	display: flex;
+	flex-wrap: wrap;
+	position: static;
+}
+
+/*.oxygen-control-wrapper.oxygen-ct_headline-font-weight .oxygen-select-box-option:first-child,
+.oxygen-control-wrapper.oxygen-ct_text_block-font-weight .oxygen-select-box-option:first-child {
+	display: none;
+}*/
+
+.oxygen-control-wrapper.oxygen-ct_headline-font-weight .oxygen-select-box-option:hover,
+.oxygen-control-wrapper.oxygen-ct_text_block-font-weight .oxygen-select-box-option:hover {
+	background-color: transparent;
+	color: #43A3FC;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-font-weight .oxygen-select-box,
+.oxygen-control-wrapper.oxygen-ct_text_block-font-weight .oxygen-select-box {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	pointer-events: none;
+}
+
+.oxygen-sidebar-control-panel-basic-styles:not(.oxygen-basic-styles-subtub) .oxygen-control-wrapper.oxygen-ct_headline-font-weight .oxygen-select-box,
+.oxygen-sidebar-control-panel-basic-styles:not(.oxygen-basic-styles-subtub) .oxygen-control-wrapper.oxygen-ct_text_block-font-weight .oxygen-select-box {
+	background-color: transparent;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-font-weight .oxygen-select-box .oxygen-select-box-current,
+.oxygen-control-wrapper.oxygen-ct_text_block-font-weight .oxygen-select-box .oxygen-select-box-current {
+	color: #43A3FC;
+	padding-left: 7px;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-font-weight .oxygen-select-box-dropdown,
+.oxygen-control-wrapper.oxygen-ct_text_block-font-weight .oxygen-select-box-dropdown {
+	display: none;
+}
+
+/* Heading Tag control */
+
+.oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-select-box-options {
+	display: flex;
+	text-transform: lowercase;
+	box-shadow: none;
+	position: static;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-select-box-option:hover {
+	background-color: transparent;
+	color: #43A3FC !important;
+}
+
+/* .oxygen-sidebar-control-panel-basic-styles:not(.oxygen-basic-styles-subtub) .oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-select-box-options {
+	background-color: transparent;
+} */
+
+.oxygen-sidebar-control-panel-basic-styles:not(.oxygen-basic-styles-subtub) .oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-select-box {
+	background-color: transparent;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-select-box {
+	position: absolute;
+	top: 30px;
+	width: 100%;
+	text-transform: uppercase;
+	cursor: auto;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-select-box-dropdown {
+	display: none;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-select-box-current {
+	color: #43A3FC !important;
+	padding-left: 7px;
+}
+
+.oxygen-control-wrapper.oxygen-ct_headline-tag .oxygen-option-default .oxygen-select-box-current {
+	opacity: 0.75;
+}
+
+.oxygen-select-box-wrapper .oxygen-select-box-options,
+.oxygen-four-sides-measure-box .oxygen-measure-box .oxygen-measure-box-unit-selector,
+.oxygen-four-sides-measure-box .oxygen-measure-box .oxygen-measure-box-units {
+	z-index: 2001;
+}
+
+/* Text and Section components */
+.oxygen-ct_text_block-tag .oxygen-select-box-options,
+.oxygen-ct_section-tag .oxygen-select-box-options {
+	display: flex;
+	flex-wrap: wrap;
+	position: static;
+}
+
+.oxygen-ct_text_block-tag .oxygen-active-select .oxygen-select-box-options,
+.oxygen-ct_section-tag .oxygen-active-select .oxygen-select-box-options {
+	display: flex;
+}
+
+.oxygen-ct_text_block-tag .oxygen-select-box,
+.oxygen-ct_section-tag .oxygen-select-box {
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	pointer-events: none;
+}
+
+.oxygen-sidebar-control-panel-basic-styles:not(.oxygen-basic-styles-subtub) .oxygen-ct_text_block-tag .oxygen-select-box,
+.oxygen-sidebar-control-panel-basic-styles:not(.oxygen-basic-styles-subtub) .oxygen-ct_section-tag .oxygen-select-box {
+	background-color: transparent;
+}
+
+.oxygen-ct_text_block-tag .oxygen-select-box-option:hover,
+.oxygen-ct_section-tag .oxygen-select-box-option:hover {
+	background-color: transparent;
+	color: #43A3FC !important;
+}
+
+.oxygen-ct_text_block-tag .oxygen-select-box-dropdown,
+.oxygen-ct_section-tag .oxygen-select-box-dropdown {
+	display: none;
+}
+
+.oxygen-ct_text_block-tag .oxygen-option-default .oxygen-select-box-current,
+.oxygen-ct_section-tag .oxygen-option-default .oxygen-select-box-current {
+	color: #43A3FC !important;
+	opacity: 1;
+}
+
+.oxygen-ct_text_block-tag .oxygen-select-box-current,
+.oxygen-ct_section-tag .oxygen-select-box-current {
+	color: #43A3FC !important;
+}
+
+/* Section Container Width */
+
+div[ng-class="{'oxygen-option-default':iframeScope.isInherited(iframeScope.component.active.id, 'section-width')}"] + .oxygen-select-box-options {
+	display: flex;
+	flex-wrap: wrap;
+	position: static;
+}
+
+div[ng-class="{'oxygen-option-default':iframeScope.isInherited(iframeScope.component.active.id, 'section-width')}"].oxygen-select-box {
+	position: absolute;
+	top: 30px;
+	width: 100%;
+	pointer-events: none;
+	background-color: transparent;
+}
+
+div[ng-class="{'oxygen-option-default':iframeScope.isInherited(iframeScope.component.active.id, 'section-width')}"] + .oxygen-select-box-options
+.oxygen-select-box-option:hover {
+	background-color: transparent;
+	color: #43A3FC;
+}
+
+div[ng-class="{'oxygen-option-default':iframeScope.isInherited(iframeScope.component.active.id, 'section-width')}"] .oxygen-select-box-dropdown {
+	display: none;
+}
+
+div[ng-class="{'oxygen-option-default':iframeScope.isInherited(iframeScope.component.active.id, 'section-width')}"] .oxygen-select-box-current {
+	color: #43A3FC;
+	opacity: 1;
+}
+
+div[ng-show="isActiveName('ct_section')&&iframeScope.getOption('section-width')=='custom'"] .oxygen-measure-box .oxygen-measure-box-units {
+	top: 60px;
+}
+
+/* Pro Menu / Desktop Menu / Typography */
+div[ng-repeat="data in [{paramName:'oxy-pro-menu_-oxy-pro-menu-list -menu-item- -oxy-pro-menu-list -menu-item a_typography_font-weight', idName:'oxygen-typography-font-family'}]"] #oxygen-typography-font-family .oxygen-select-box-options {
+	display: flex;
+	flex-wrap: wrap;
+	position: static;
+}
+
+div[ng-repeat="data in [{paramName:'oxy-pro-menu_-oxy-pro-menu-list -menu-item- -oxy-pro-menu-list -menu-item a_typography_font-weight', idName:'oxygen-typography-font-family'}]"] #oxygen-typography-font-family .oxygen-select-box-option:hover {
+	background-color: transparent;
+	color: #43A3FC;
+}
+
+div[ng-repeat="data in [{paramName:'oxy-pro-menu_-oxy-pro-menu-list -menu-item- -oxy-pro-menu-list -menu-item a_typography_font-weight', idName:'oxygen-typography-font-family'}]"] #oxygen-typography-font-family .oxygen-select-box {
+	background-color: transparent;
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	pointer-events: none;
+}
+
+div[ng-repeat="data in [{paramName:'oxy-pro-menu_-oxy-pro-menu-list -menu-item- -oxy-pro-menu-list -menu-item a_typography_font-weight', idName:'oxygen-typography-font-family'}]"] #oxygen-typography-font-family .oxygen-select-box .oxygen-select-box-current {
+	color: #43A3FC;
+	padding-left: 7px;
+}
+
+div[ng-repeat="data in [{paramName:'oxy-pro-menu_-oxy-pro-menu-list -menu-item- -oxy-pro-menu-list -menu-item a_typography_font-weight', idName:'oxygen-typography-font-family'}]"] #oxygen-typography-font-family .oxygen-select-box-dropdown {
+	display: none;
+}
+
+/*Increase the padding around the unit selector - begin*/
+/*https://d.pr/i/pMaDWj*/
+
+.oxygen-four-sides-measure-box .oxygen-measure-box .oxygen-measure-box-unit-selector {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/*Increase the padding around the unit selector - end*/

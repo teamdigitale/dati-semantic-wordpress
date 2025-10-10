@@ -1,0 +1,17 @@
+/**
+* @prop --vm-dbl-click-fullscreen-z-index: The position in the UI z-axis stack inside the player.
+*/
+vime-dbl-click-fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: none;
+  z-index: var(--vm-dbl-click-fullscreen-z-index);
+}
+vime-dbl-click-fullscreen.enabled {
+  display: inline-block;
+  pointer-events: auto;
+}

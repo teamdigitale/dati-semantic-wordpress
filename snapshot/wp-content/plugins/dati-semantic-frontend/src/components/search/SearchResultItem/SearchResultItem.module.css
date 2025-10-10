@@ -1,0 +1,57 @@
+.topmostHeader {
+  font-size: 14px;
+  color: #435a70;
+  margin-top: 0.8em;
+  margin-bottom: 24px;
+}
+
+.itemTitle {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.itemTitle:hover {
+  text-decoration: underline;
+  text-decoration-color: #06c;
+  text-underline-offset: 3px;
+}
+.assetIri:hover {
+  text-decoration: underline;
+  text-decoration-color: #06c;
+  text-underline-offset: 2px;
+}
+
+.itemDescription {
+  font-family: "Titillium Web", Geneva, Tahoma, sans-serif !important;
+  font-size: 18px !important;
+}
+
+.copyurl:hover,
+.copyurl:hover * {
+  color: #06c;
+  cursor: pointer;
+  text-decoration: underline !important;
+}
+
+.itemInfo {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 20px;
+  margin-top: 3em;
+}
+
+.itemInfoLabel {
+  font-weight: 600;
+  line-height: 20px;
+  color: #2f475e;
+}
+
+.smallerFooter::after {
+  margin-top: 1px !important;
+}
+
+.captionCategories {
+  font-weight: 600;
+  line-height: 16px;
+  color: #768594;
+}

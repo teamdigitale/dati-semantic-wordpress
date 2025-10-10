@@ -1,0 +1,26 @@
+.main-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+  letter-spacing: unset;
+  line-height: 1.1;
+}
+
+.sub-heading {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  letter-spacing: normal;
+  line-height: 1.35;
+}
+
+.pagetitle{
+  margin-left: -0.625rem;
+}
+
+@media (max-width: 500px) {
+  [class*="col-2"] {
+    width: 70px;
+  }
+}

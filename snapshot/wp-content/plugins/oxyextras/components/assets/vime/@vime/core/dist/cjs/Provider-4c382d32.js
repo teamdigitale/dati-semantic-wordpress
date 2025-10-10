@@ -1,0 +1,12 @@
+'use strict';
+
+(function (Provider) {
+  Provider["Audio"] = "audio";
+  Provider["Video"] = "video";
+  Provider["HLS"] = "hls";
+  Provider["Dash"] = "dash";
+  Provider["YouTube"] = "youtube";
+  Provider["Vimeo"] = "vimeo";
+  Provider["Dailymotion"] = "dailymotion";
+  Provider["FakeTube"] = "faketube";
+})(exports.Provider || (exports.Provider = {}));

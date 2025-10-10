@@ -1,0 +1,59 @@
+#ct-viewport-container.oxy-fullscreen-detached {
+	opacity: 0;
+}
+
+#ct-viewport-container.oxy-fullscreen-toggle {
+	position: fixed;
+	left: 0;
+	width: 100vw !important;
+	height: 100vh !important;
+	margin: 0 !important;
+	z-index: 2;
+}
+
+#ct-viewport-container.oxy-fullscreen-toggle iframe#ct-artificial-viewport {
+	height: 100vh !important;
+	transform: scale(1) !important;
+	margin: 0;
+}
+
+#ct-viewport-container.oxy-fullscreen-toggle:not(.oxy-fullscreen-media) iframe#ct-artificial-viewport {
+	width: 100% !important;
+}
+
+#ct-viewport-container.oxy-fullscreen-toggle #ct-viewport-ruller-wrap {
+	width: 100vw !important;
+	left: -7px !important;
+	top: 100vh !important;
+	transform: scale(1) !important;
+}
+
+
+.oxy-fullscreen-codemirror {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	z-index: 99999999999;
+	margin: 0;
+	background-color: rgb(61,68,75);
+ }
+
+.oxy-fullscreen-codemirror .oxygen-sidebar-code-editor-wrap {
+	height: calc(100vh - 60px) !important;
+}
+
+#oxygen-global-settings {
+	z-index: 2147483646;
+}
+
+#ct-sidepanel.oxy-fullscreen-sidepanel,
+#oxygen-global-settings.oxy-fullscreen-sidepanel,
+#ct-sidepanel.oxy-fullscreen-sidepanel .ct-tab-panel {
+	width: 600px !important;
+}
+
+#ct-sidepanel.oxy-fullscreen-sidepanel .ct-dom-tree-node-type-general {
+	max-width: 300px;
+}

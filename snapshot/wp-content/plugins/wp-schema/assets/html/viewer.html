@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schema Viewer</title>
+  <link rel="stylesheet" href="../css/schema-editor.css" />
+  <style>
+    html, body { height: 100%; margin: 0; }
+    #app { min-height: 100%; height: auto; }
+    /* Mostra solo la colonna destra (overview) */
+    .schema-editor > *:not(.overview-container) { display: none !important; }
+    .overview-container { width: 100% !important; max-width: 100% !important; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script src="../js/schema-editor.js"></script>
+  <script>
+    (function () {
+      function getParam(name) {
+        const params = new URLSearchParams(window.location.search);
+        return params.get(name) || '';
+      }
+      // Intercetta le richieste dell'editor per help.md/assistant.md e reindirizza ai file del plugin
+      (function interceptHelp() {
+        const originalFetch = window.fetch;
+        window.fetch = function(url, options) {
+          if (typeof url === 'string') {
+            if (/help\.md(\?|$)/.test(url)) return originalFetch('../help.md', options);
+            if (/assistant\.md(\?|$)/.test(url)) return originalFetch('../assistant.md', options);
+          }
+          return originalFetch(url, options);
+        };
+        const origOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+          if (typeof url === 'string') {
+            if (/help\.md(\?|$)/.test(url)) url = '../help.md';
+            if (/assistant\.md(\?|$)/.test(url)) url = '../assistant.md';
+          }
+          return origOpen.apply(this, arguments);
+        };
+      })();
+      const url = getParam('url');
+      const mount = document.getElementById('app');
+      document.addEventListener('DOMContentLoaded', function () {
+        if (typeof renderSchemaEditor === 'function' && mount) {
+          renderSchemaEditor('#app', { viewer: true, url: url });
+        } else {
+          const warn = document.createElement('div');
+          warn.textContent = 'Schema editor bundle non trovato.';
+          mount.appendChild(warn);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

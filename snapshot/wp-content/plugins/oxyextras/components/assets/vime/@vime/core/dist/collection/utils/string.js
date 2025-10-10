@@ -1,0 +1,7 @@
+export const dashToCamelCase = (str) => str
+  .replace(/-([a-z])/g, (_, up) => up.toUpperCase());
+export const dashToPascalCase = (str) => str
+  .toLowerCase()
+  .split('-')
+  .map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
+  .join('');

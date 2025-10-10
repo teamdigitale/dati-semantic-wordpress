@@ -1,0 +1,230 @@
+/*! Skeletabs v2.1.1: bundled themes and effects | MIT License */
+.oxy-dynamic-tabs_tab-group,
+.oxy-dynamic-tabs_theme-dark .oxy-dynamic-tabs_tab-group {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.oxy-dynamic-tabs_tab {
+    display: flex;
+    padding: 1em 1.25em;
+    justify-content: space-between;
+    color: inherit;
+    border: 0;
+    font-family: inherit;
+    font-size: 1rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    width: 100%;
+}
+.oxy-dynamic-tabs_tab:disabled {
+    background: transparent;
+    cursor: not-allowed;
+    -ms-touch-action: none;
+    touch-action: none;
+}
+
+.oxy-dynamic-tabs_panel-heading:first-child {
+    margin-top: 0;
+}
+.oxy-dynamic-tabs_panel-heading .oxy-dynamic-tabs_tab {
+    width: 100%;
+}
+.oxy-dynamic-tabs_inner {
+    color: #333;
+}
+.oxy-dynamic-tabs_tab {
+    background: #f6f6f8;
+}
+
+.oxy-dynamic-tabs_tab:disabled {
+    color: #ccc;
+    background: transparent;
+}
+
+.oxy-dynamic-tabs_tab.oxy-dynamic-tabs_active {
+    background: #eee;
+}
+
+.oxy-dynamic-tabs_panel-group {
+    background-color: #fff;
+}
+.oxy-dynamic-tabs_panel:focus {
+    outline: 0;
+}
+
+.oxy-dynamic-tabs_mode-tabs .oxy-dynamic-tabs_panel-group,
+.oxy-dynamic-tabs_mode-tabs .oxy-tabs {
+    position: relative;
+}
+
+.oxy-dynamic-tabs_mode-tabs.use-fade .oxy-dynamic-tabs_panel,
+.oxy-dynamic-tabs_mode-tabs.use-fade .oxy-tab-content {
+    position: relative;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+.oxy-dynamic-tabs_mode-tabs.use-fade .oxy-dynamic-tabs_leave {
+    position: absolute;
+    top: 0;
+    display: block !important;
+    opacity: 1;
+}
+
+.oxy-dynamic-tabs_mode-tabs.use-fade .oxy-dynamic-tabs_leave-active {
+    opacity: 0;
+}
+.oxy-dynamic-tabs_mode-tabs.use-fade .oxy-dynamic-tabs_enter {
+    opacity: 0;
+}
+.oxy-dynamic-tabs_mode-tabs.use-fade .oxy-dynamic-tabs_enter-active {
+    opacity: 1;
+}
+.oxy-dynamic-tabs_mode-tabs.use-fade-scale .oxy-dynamic-tabs_panel,
+.oxy-dynamic-tabs_mode-tabs.use-fade-scale .oxy-tab-content {
+    position: relative;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+    transition-property: opacity, transform, -webkit-transform;
+}
+.oxy-dynamic-tabs_mode-tabs.use-fade-scale .oxy-dynamic-tabs_leave {
+    position: absolute;
+    top: 0;
+    display: block !important;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+.oxy-dynamic-tabs_mode-tabs.use-fade-scale .oxy-dynamic-tabs_leave-active {
+    opacity: 0;
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+.oxy-dynamic-tabs_mode-tabs.use-fade-scale .oxy-dynamic-tabs_enter {
+    opacity: 0;
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+}
+.oxy-dynamic-tabs_mode-tabs.use-fade-scale .oxy-dynamic-tabs_enter-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+
+.oxy-dynamic-tabs_mode-accordion .oxy-tabs-contents .oxy-dynamic-tabs_panel-heading {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.oxy-dynamic-tabs_mode-tabs.use-drop .oxy-dynamic-tabs_panel {
+    position: relative;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+    transition-property: opacity, transform, -webkit-transform;
+}
+.oxy-dynamic-tabs_mode-tabs.use-drop .oxy-dynamic-tabs_leave {
+    position: absolute;
+    top: 0;
+    display: block !important;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.oxy-dynamic-tabs_mode-tabs.use-drop .oxy-dynamic-tabs_leave-active {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 50%, 0);
+    transform: translate3d(0, 50%, 0);
+}
+.oxy-dynamic-tabs_mode-tabs.use-drop .oxy-dynamic-tabs_enter {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+}
+.oxy-dynamic-tabs_mode-tabs.use-drop .oxy-dynamic-tabs_enter-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-dynamic-tabs_panel-group,
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-tabs {
+    overflow: hidden;
+}
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-dynamic-tabs_panel,
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-tab-content {
+    position: relative;
+    -webkit-transition: 500ms;
+    transition: 500ms;
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform;
+    transition-property: opacity, transform, -webkit-transform;
+}
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-dynamic-tabs_leave {
+    position: absolute;
+    top: 0;
+    display: block !important;
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-dynamic-tabs_leave-active {
+    opacity: 0;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+}
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-dynamic-tabs_enter {
+    opacity: 0;
+    -webkit-transform: translate3d(50%, 0, 0);
+    transform: translate3d(50%, 0, 0);
+}
+.oxy-dynamic-tabs_mode-tabs.use-rotate .oxy-dynamic-tabs_enter-active {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+
+
+body:not(.oxygen-builder-body) .oxy-dynamic-tabs .oxy-tabs-contents-content-hidden {
+    display: flex!important;
+}
+
+.oxy-dynamic-tabs .oxy-tab {
+    padding: 0;
+}
+
+.oxy-dynamic-tabs .oxy-tab-content {
+    padding: 30px;
+}

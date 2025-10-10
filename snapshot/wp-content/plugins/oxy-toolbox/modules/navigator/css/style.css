@@ -1,0 +1,133 @@
+#wpadminbar .oxy-toolbox-top-level-item img {
+	height: 13px;
+	padding-right: 6px;
+}
+
+.oxy-toolbox-top-level-item > .ab-sub-wrapper ul {
+	max-height: 90vh;
+	overflow-y: auto;
+}
+
+/* Make 3rd-level menu items appear */
+#wp-admin-bar-oxy-toolbox-fluentforms.oxy-toolbox-top-level-item > .ab-sub-wrapper ul,
+#wp-admin-bar-oxy-toolbox-oxygen.oxy-toolbox-top-level-item > .ab-sub-wrapper ul,
+#wp-admin-bar-oxy-toolbox-plugins.oxy-toolbox-top-level-item > .ab-sub-wrapper ul {
+	overflow-y: visible;
+}
+
+/* Plugins submenu */
+#wp-admin-bar-oxy-toolbox-plugins.oxy-toolbox-top-level-item > .ab-sub-wrapper > ul {
+	width: 200px;
+}
+
+/* Edit Page */
+#wpadminbar #wp-admin-bar-oxy-toolbox-wp-pages .ab-icon:before {
+	content: "\f105";
+	top: 2px;
+}
+
+/* Edit Post */
+#wpadminbar #wp-admin-bar-oxy-toolbox-wp-posts .ab-icon:before {
+	content: "\f109";
+	top: 2px;
+}
+
+/* Edit Product */
+#wpadminbar #wp-admin-bar-oxy-toolbox-wp-products .ab-icon:before {
+	content: "\f312";
+	top: 1px;
+}
+
+/* Fluent Forms */
+#wpadminbar #wp-admin-bar-oxy-toolbox-fluentforms .ab-icon:before {
+	content: "\f175";
+}
+
+/* ACF */
+#wpadminbar #wp-admin-bar-oxy-toolbox-acf .ab-icon:before {
+	content: "\f116";
+	top: 1px;
+}
+
+/* Advanced Scripts */
+#wpadminbar #wp-admin-bar-oxy-toolbox-advanced-scripts .ab-icon:before {
+	content: "\f107";
+	top: 1px;
+}
+
+/* Plugins */
+#wpadminbar #wp-admin-bar-oxy-toolbox-plugins .ab-icon:before {
+	content: "\f106";
+	/* top: 1px; */
+}
+
+/* Top level menu item links */
+#wpadminbar .oxy-toolbox-top-level-item > a {
+	display: flex;
+	align-items: center;
+}
+
+/* View all */
+
+#wpadminbar .quicklinks .menupop ul li.oxy-toolbox-view-all > a { 
+    text-decoration: underline;
+	color: #848484;
+}
+#wpadminbar .quicklinks .menupop ul li.oxy-toolbox-view-all > a:hover {
+	color: #848484;
+}
+
+#wpadminbar li.oxy-toolbox-view-all .ab-submenu {
+	padding: 1px 0;
+}
+
+#wpadminbar li.view-all-items-new-tab .ab-item:before {
+	padding: 3px 0;
+}
+
+/* Parent of mini child */
+
+#wpadminbar li.oxy-toolbox-parent-of-mini-child.hover>.ab-sub-wrapper {
+    margin: 0;
+    right: 0;
+    top: 0;
+}
+
+#wpadminbar li.oxy-toolbox-parent-of-mini-child .wp-admin-bar-arrow {
+	display: none;
+}
+
+#wpadminbar li.oxy-toolbox-parent-of-mini-child ul.ab-submenu {
+	line-height: 1;
+    padding: 0;
+}
+
+/* Mini child */
+
+#wpadminbar li.oxy-toolbox-mini-child {
+    display: inline-block;
+    padding: 0 5px;
+    border-left: 1px dotted #808080;
+    max-width: 18px;
+    overflow: hidden;
+}
+
+#wpadminbar .oxy-toolbox-mini-child a {
+	padding: 0;
+}
+
+/* View icon */
+#wpadminbar .ab-sub-wrapper .ab-sub-wrapper .ab-submenu li.oxy-toolbox-mini-child-view a::before {
+	content: "\f115";
+}
+
+/* New tab icon */
+#wpadminbar .ab-sub-wrapper .ab-sub-wrapper .ab-submenu li.oxy-toolbox-mini-child-new-tab a::before {
+	content: "\f504";
+}
+
+/* General */
+
+#wpadminbar .woocommerce-Price-amount {
+	color: inherit;
+}

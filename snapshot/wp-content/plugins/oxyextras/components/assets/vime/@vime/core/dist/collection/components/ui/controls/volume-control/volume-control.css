@@ -1,0 +1,29 @@
+vime-volume-control {
+  align-items: center;
+  display: flex;
+  position: relative;
+  pointer-events: auto;
+  margin-left: calc(var(--vm-control-spacing) / 2) !important;
+}
+vime-volume-control vime-slider {
+  width: 75px;
+  height: 100%;
+  margin: 0;
+  max-width: 0;
+  position: relative;
+  z-index: 3;
+  transition: margin 0.2s cubic-bezier(0.4, 0, 1, 1), max-width 0.2s cubic-bezier(0.4, 0, 1, 1);
+  margin-left: calc(var(--vm-control-spacing) / 2) !important;
+  visibility: hidden;
+}
+vime-volume-control vime-slider:hover {
+  cursor: pointer;
+}
+vime-volume-control vime-slider.hidden {
+  display: none;
+}
+vime-volume-control vime-slider.active {
+  max-width: 75px;
+  margin: 0 var(--vm-control-spacing)/2;
+  visibility: visible;
+}

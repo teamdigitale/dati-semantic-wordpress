@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'erropix/advanced-scripts',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '045f438bb74174e1297267aa9fac5d75663fdf43',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'erropix/advanced-scripts' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '045f438bb74174e1297267aa9fac5d75663fdf43',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'freemius/wordpress-sdk' => array(
+            'pretty_version' => '2.6.2',
+            'version' => '2.6.2.0',
+            'reference' => 'ea3a288e52ff74c755b3c1eb857f41c5a2d899e5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../freemius/wordpress-sdk',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'wikimedia/less.php' => array(
+            'pretty_version' => '1.8.1',
+            'version' => '1.8.1.0',
+            'reference' => 'f0f7768f6fa8a9d2ac6a0274f6f477c72159bf9b',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wikimedia/less.php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

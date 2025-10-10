@@ -1,0 +1,133 @@
+/* Fluid Fonts */
+:root {
+    --ist-50: clamp(30px, calc(30px + (50 - 30) * (100vw - 320px) / (1280 - 320)), 50px);
+    --ist-48: clamp(29px, calc(29px + (48 - 29) * (100vw - 320px) / (1280 - 320)), 48px);
+    --ist-46: clamp(28px, calc(28px + (46 - 28) * (100vw - 320px) / (1280 - 320)), 46px);
+    --ist-44: clamp(27px, calc(27px + (44 - 27) * (100vw - 320px) / (1280 - 320)), 44px);
+    --ist-42: clamp(26px, calc(26px + (42 - 26) * (100vw - 320px) / (1280 - 320)), 42px);
+    --ist-40: clamp(25px, calc(25px + (40 - 25) * (100vw - 320px) / (1280 - 320)), 40px);
+    --ist-38: clamp(24px, calc(24px + (38 - 24) * (100vw - 320px) / (1280 - 320)), 38px);
+    --ist-36: clamp(23px, calc(23px + (36 - 23) * (100vw - 320px) / (1280 - 320)), 36px);
+    --ist-34: clamp(22px, calc(22px + (34 - 22) * (100vw - 320px) / (1280 - 320)), 34px);
+    --ist-32: clamp(21px, calc(21px + (32 - 21) * (100vw - 320px) / (1280 - 320)), 32px);
+    --ist-30: clamp(20px, calc(20px + (30 - 20) * (100vw - 320px) / (1280 - 320)), 30px);
+    --ist-28: clamp(19px, calc(19px + (28 - 19) * (100vw - 320px) / (1280 - 320)), 28px);
+    --ist-2: clamp(18px, calc(18px + (26 - 18) * (100vw - 320px) / (1280 - 320)), 26px);
+    --ist-24: clamp(17px, calc(17px + (24 - 17) * (100vw - 320px) / (1280 - 320)), 24px);
+    --ist-22: clamp(16px, calc(16px + (22 - 16) * (100vw - 320px) / (1280 - 320)), 22px);
+    --ist-20: clamp(15px, calc(15px + (20 - 15) * (100vw - 320px) / (1280 - 320)), 20px);
+    --ist-18: clamp(14px, calc(14px + (18 - 14) * (100vw - 320px) / (1280 - 320)), 18px);
+    --ist-16: clamp(13px, calc(13px + (16 - 13) * (100vw - 320px) / (1280 - 320)), 16px);
+    --ist-15: clamp(12px, calc(12px + (15 - 12) * (100vw - 320px) / (1280 - 320)), 15px);
+    --ist-14: clamp(12px, calc(12px + (14 - 12) * (100vw - 320px) / (1280 - 320)), 14px);
+}
+
+/* titillium-web-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/titillium-web-v17-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* titillium-web-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/titillium-web-v17-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* titillium-web-italic - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/titillium-web-v17-latin-italic.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* titillium-web-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/titillium-web-v17-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* titillium-web-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/titillium-web-v17-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lora-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/lora-v35-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lora-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/lora-v35-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* lora-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/lora-v35-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+/* roboto-mono-300 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/roboto-mono-v23-latin-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-mono-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/roboto-mono-v23-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-mono-500 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/roboto-mono-v23-latin-500.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* roboto-mono-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/roboto-mono-v23-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+

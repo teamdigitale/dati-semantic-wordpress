@@ -1,0 +1,48 @@
+div:empty {
+  display: none;
+}
+
+a:empty {
+  display: none;
+}
+
+.title {
+  margin-bottom: 0px;
+  font-size: 16px;
+  letter-spacing: 1.1px;
+  color: #455b71;
+}
+
+.subtitle {
+  font-size: 24px;
+}
+
+.description {
+  font-size: 18px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #555;
+  padding-top: 25px;
+}
+
+.buttonSection {
+  padding-top: 24px;
+}
+
+.btnSecondary {
+  width: 10.8em;
+}
+
+.btnSecondary:hover {
+  color: #084d91 !important;
+}
+.bkgIntro {
+  background-color: #f2f7fc;
+}
+.IntroSectionIcon {
+  height: 100%;
+  width: 100%;
+}

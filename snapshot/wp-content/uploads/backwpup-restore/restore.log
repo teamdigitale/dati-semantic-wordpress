@@ -1,0 +1,3 @@
+[2025-09-17T09:24:48.447854+00:00] restore.WARNING: [2] Attempt to read property "logfile" on false (/var/www/html/wp-content/plugins/backwpup/inc/class-page-jobs.php on Line 1016) | PHP 8.3.9 (Linux) [] []
+[2025-09-17T09:24:48.449938+00:00] restore.WARNING: [2] Attempt to read property "job" on false (/var/www/html/wp-content/plugins/backwpup/inc/class-page-jobs.php on Line 1127) | PHP 8.3.9 (Linux) [] []
+[2025-09-17T09:24:48.450128+00:00] restore.WARNING: [2] Trying to access array offset on null (/var/www/html/wp-content/plugins/backwpup/inc/class-page-jobs.php on Line 1127) | PHP 8.3.9 (Linux) [] []

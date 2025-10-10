@@ -1,0 +1,35 @@
+#result {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    background-color: #e0e0e0;
+    border-radius: 16px;
+    margin-right: 8px;
+}
+
+.close-button {
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.reset-filters {
+    margin-left: 8px;
+    padding: 4px 8px;
+    color: #007bff;
+    text-decoration: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.reset-filters:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,55 @@
+/* CSS Tweaks */
+
+/* Conditions Dialog */
+
+body .oxygen-condition-builder-condition {
+	align-items: center;
+}
+
+div.oxygen-data-dialog {
+	overflow-y: auto;
+}
+
+.oxygen-condition-builder-add-condition {
+	margin-bottom: 20px;
+}
+
+body #ct-modal-if-conditions .oxygen-condition-builder-condition > .oxygen-control {
+	width: 30%;
+}
+
+body.hydrogen-conditions-enhancer-on.hydrogen-eed-off #ct-modal-if-conditions .oxygen-condition-builder-condition > .oxygen-condition-builder-condition-delete {
+	margin-top: 0;
+}
+
+/* Dynamic data popup */
+
+body div#ctdynamicdata-popup {
+	overflow: auto;
+}
+
+/* For Firefox */
+
+input[type="range"] {
+	background-color: transparent;
+}
+
+ input[type="range"]::-moz-range-thumb {
+	height: 10px !important;
+	width: 10px !important;
+}
+  
+@-moz-document url-prefix() { 
+	body .oxygen-measure-box-slider {
+		top: 2px;
+	}
+
+	.alpha-color-picker-wrap .wp-picker-container:not(.wp-picker-active) .button.wp-color-result {
+		position: absolute;
+		top: 0;
+	}
+}
+
+.oxygen-sidebar-breadcrumb.oxygen-sidebar-subtub-breadcrumb {
+	scrollbar-width: none;
+}

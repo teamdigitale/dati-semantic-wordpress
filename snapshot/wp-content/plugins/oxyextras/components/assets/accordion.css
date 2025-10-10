@@ -1,0 +1,170 @@
+ .oxy-pro-accordion {
+  overflow-anchor: none;  
+  border-radius: 5px;
+  width: 100%;    
+}
+
+.oxy-pro-accordion_content {
+    width: 100%;
+}
+
+.oxy-pro-accordion_inner[data-type=acf] {
+   counter-reset: extras_accordion_items; 
+}
+
+.oxy-pro-accordion_inner[data-type=acf] .oxy-pro-accordion_item {
+    counter-increment: extras_accordion_items;
+}
+
+.oxy-pro-accordion_inner[data-type=metabox] {
+    counter-reset: extras_accordion_items; 
+ }
+ 
+ .oxy-pro-accordion_inner[data-type=metabox] .oxy-pro-accordion_item {
+     counter-increment: extras_accordion_items;
+ }
+
+.oxy-pro-accordion {
+    counter-increment: extras_accordion_items;
+}
+
+.oxy-pro-accordion:first-of-type {
+    counter-reset: extras_accordion_items;
+}
+
+.oxy-pro-accordion[data-counter="false"] {
+    counter-increment: none;
+}
+
+.oxy-pro-accordion[data-counter="false"]:first-of-type {
+    counter-reset: none;
+}
+
+.oxy-dynamic-list [data-counter="true"] {
+    counter-increment: extras_accordion_items;
+}
+
+.oxy-dynamic-list [data-counter="true"]:first-of-type {
+    counter-reset: extras_accordion_items;
+}
+
+.oxy-pro-accordion_header {
+  color: inherit;
+  cursor: pointer;
+  font-size: .7em;
+  letter-spacing: .1em;
+  transition: all var(--extras-accordion-duration);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  box-shadow: none;
+  text-align: left;
+  padding: 0;
+  font-family: inherit;    
+}
+
+.woocommerce .oxy-pro-accordion_header {
+    transition: all var(--extras-accordion-duration);
+    -webkit-transition: all var(--extras-accordion-duration);
+}
+
+.oxy-pro-accordion_header svg {
+    fill: currentColor;
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+    transition: transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration)/2);
+    -webkit-transition: -webkit-transform var(--extras-accordion-duration), opacity calc(var(--extras-accordion-duration)/2);
+}
+
+.oxy-pro-accordion_icon {
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    font-size: 18px;
+    position: relative;
+}
+
+.oxy-pro-accordion_inner {
+    padding: 0;
+    margin: 0;
+}
+
+.oxy-pro-accordion_inner[data-icon=switch] .oxy-pro-accordion_close-icon {
+    position: absolute;
+    opacity: 0;
+}
+
+.oxy-pro-accordion_inner[data-icon=switch] .oxy-pro-accordion_toggle-icon {
+    opacity: 1;
+}
+
+.oxy-pro-accordion_inner[data-icon=switch] .oxy-pro-accordion_item.active .oxy-pro-accordion_close-icon {
+    opacity: 1;
+}
+
+.oxy-pro-accordion_inner[data-icon=switch] .oxy-pro-accordion_item.active .oxy-pro-accordion_toggle-icon {
+    opacity: 0;
+}
+
+.oxy-pro-accordion_context-icon {
+    background-color: rgba(255,255,255,0.35);
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.oxy-pro-accordion_title-area {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    padding: 10px 20px;
+    line-height: 1.2;
+}
+
+.oxy-pro-accordion_title {
+    color: inherit;
+}
+
+.oxy-pro-accordion_body {
+  display: none;
+  will-change: height, display;
+}
+
+.oxy-pro-accordion_item[data-init=open] .oxy-pro-accordion_body {
+    display: block;
+}
+
+.oxy-pro-accordion_content {
+  padding: 1.5em 1.5em;
+  transition: var(--extras-accordion-duration) ease;
+}
+
+.oxy-pro-accordion_item {
+  --extras-accordion-duration: 300ms;    
+  transition: var(--extras-accordion-duration) ease;
+  -webkit-transition: var(--extras-accordion-duration) ease;    
+  list-style-type: none;
+  --extras-counter-type: decimal;    
+    padding: 0;
+    margin: 0;    
+}
+
+.oxy-pro-accordion_item.active .oxy-pro-accordion_header {
+    transform: scale(var(--header-active-scale));
+}
+
+.oxy-pro-accordion_item.active .oxy-pro-accordion_icon svg {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+.oxy-dynamic-list > .ct-div-block:first-child .oxy-pro-accordion_inner[data-repeater-first="true"] .oxy-pro-accordion_body {
+    display: block;
+}

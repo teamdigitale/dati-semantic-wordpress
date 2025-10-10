@@ -1,0 +1,5 @@
+.oxygen-add-section-element img[src*="oextras"],
+.oxygen-add-section-element img[src*="oxyextras"] {
+    transform: scale(0.75);
+    margin: 0;
+}

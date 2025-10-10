@@ -1,0 +1,139 @@
+/* Modern CSS reset | https://hankchizljaw.com/wrote/a-modern-css-reset/
+---------------------------------------------------------------------------- */
+
+/* https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/ via https://css-tricks.com/css-fix-for-100vh-in-mobile-webkit/ */
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+
+  /* https://gist.github.com/jackdomleo7/55659bafe581d19cc341ef775d6a9e6b */
+  /* Better text rendering - font-smoothing has not been officially declared, but can still be useful */
+  text-rendering: geometricPrecision | optimizeLegibility | optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove default padding, default margin and list styles on ul, ol elements with a class attribute */
+/* ul[class]:not(.block-editor-rich-text__editable),
+ol[class]:not(.block-editor-rich-text__editable) {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+} */
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* https://gist.github.com/jackdomleo7/55659bafe581d19cc341ef775d6a9e6b */
+
+a,
+button {
+  touch-action: manipulation; /* Element doesn't want double-tap on mobile to zoom */
+}
+
+/* Compiled by Sridhar Katakam | https://wpdevdesign.com
+---------------------------------------------------------------------------- */
+
+/* Make all images responsive */
+img {
+  vertical-align: top;
+  height: auto;
+  max-width: 100%;
+}
+.oxy-gallery-item img {
+  /* https://www.facebook.com/groups/1626639680763454/permalink/3671010376326364/?comment_id=3671655102928558 */
+  vertical-align: baseline;
+}
+
+/* WP Image alignment classes */
+img.alignright {
+  float: right;
+  margin: 0 0 2em 2em;
+}
+img.alignleft {
+  float: left;
+  margin: 0 2em 2em 0;
+}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alignright {
+  float: right;
+}
+.alignleft {
+  float: left;
+}
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 480px) {
+  img.alignleft {
+    float: none;
+    margin-right: 0;
+    display: block;
+  }
+
+  img.alignright {
+    float: none;
+    margin-left: 0;
+    display: block;
+  }
+}
+
+/* Make the admin bar menu items visible on top to accomodate the sticky header */
+@media (min-width: 993px) {
+  #wpadminbar {
+    z-index: 2147483640;
+  }
+}
+
+/* Seriously, Oxygen? Why would you set this to none? */
+body label {
+  display: inline;
+}
+
+/* Search Form */
+.oxy-header .oxy-search-form {
+  width: auto;
+}
+
+.search-form {
+  display: flex;
+}
+
+/* Handling Long Words and URLs (Forcing Breaks, Hyphenation, Ellipsis, etc) */
+/* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/ */
+
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}

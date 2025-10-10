@@ -1,0 +1,140 @@
+{
+  "_from": "@vime/core@^4.2.0",
+  "_id": "@vime/core@4.7.3",
+  "_inBundle": false,
+  "_integrity": "sha512-4VtrL/PBON1gxgA5bPLDI1DC2XOjdkwSpg6IWrwY9lnM09x2Pg6Vso3BA6JllhkrWTXVab22fVk/eYqgUa3soQ==",
+  "_location": "/@vime/core",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@vime/core@^4.2.0",
+    "name": "@vime/core",
+    "escapedName": "@vime%2fcore",
+    "scope": "@vime",
+    "rawSpec": "^4.2.0",
+    "saveSpec": null,
+    "fetchSpec": "^4.2.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@vime/core/-/core-4.7.3.tgz",
+  "_shasum": "b102e756b20cd14a529567a711b4967db72769de",
+  "_spec": "@vime/core@^4.2.0",
+  "_where": "/Users/david/Documents/Local Sites/extrasupdate/app/public/wp-content/plugins/oextras/components/assets/vime/webpack",
+  "bugs": {
+    "url": "https://github.com/vime-js/vime/issues"
+  },
+  "bundleDependencies": false,
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "contributors": [
+    {
+      "name": "Rahim Alwer",
+      "email": "rahim_alwer@outlook.com"
+    }
+  ],
+  "dependencies": {
+    "@stencil/core": "2.2.0",
+    "stencil-wormhole": "^3.2.2"
+  },
+  "deprecated": false,
+  "description": "Customizable, extensible, accessible and framework agnostic media player.",
+  "devDependencies": {
+    "@babel/core": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@cypress/code-coverage": "^3.8.1",
+    "@cypress/skip-test": "^2.5.0",
+    "@cypress/webpack-preprocessor": "^5.4.5",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@stencil/sass": "^1.3.2",
+    "@types/hls.js": "^0.13.1",
+    "@types/jest": "^26.0.13",
+    "@types/node": "^14.6.3",
+    "@types/puppeteer": "^3.0.1",
+    "babel-loader": "^8.1.0",
+    "clean-css-cli": "^4.3.0",
+    "cypress": "^5.1.0",
+    "cypress-plugin-snapshots": "^1.4.4",
+    "cypress-plugin-tab": "^1.0.5",
+    "jest": "^26.4.2",
+    "jest-cli": "^26.4.2",
+    "jest-watch-typeahead": "^0.6.0",
+    "js-base64": "2.5.2",
+    "prettier": "^2.1.1",
+    "rimraf": "^3.0.2",
+    "sirv-cli": "^1.0.6",
+    "start-server-and-test": "^1.11.3",
+    "svelte": "^3.24.1",
+    "ts-loader": "^8.0.3",
+    "typescript": "^4.0.2",
+    "webpack": "^4"
+  },
+  "es2015": "dist/custom-elements/index.js",
+  "es2017": "dist/custom-elements/index.js",
+  "files": [
+    "dist/",
+    "loader/",
+    "icons/",
+    "themes/"
+  ],
+  "gitHead": "a59f3084afb3a3866fc6687e2a09ac145ec0702d",
+  "homepage": "https://github.com/vime-js/vime#readme",
+  "jsnext:main": "dist/custom-elements/index.js",
+  "keywords": [
+    "vime",
+    "player",
+    "media",
+    "audio",
+    "video",
+    "html5",
+    "stenciljs",
+    "youtube",
+    "dailymotion",
+    "vimeo",
+    "hls",
+    "dash",
+    "custom",
+    "web components"
+  ],
+  "license": "MIT",
+  "main": "dist/index.cjs.js",
+  "module": "dist/custom-elements/index.js",
+  "name": "@vime/core",
+  "nyc": {
+    "report-dir": "cypress-coverage"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vime-js/vime.git"
+  },
+  "scripts": {
+    "build": "stencil build --docs",
+    "build:post": "node scripts/post-build.js",
+    "build:themes": "rimraf themes/* && yarn min:theme.default && yarn min:theme.light",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run.ci": "cypress run --record --group @vime/core --headless --parallel --ci-build-id $BUILD_ID --config baseUrl=http://localhost:3444",
+    "cy:run.prod": "cypress run --config baseUrl=http://localhost:3444",
+    "generate": "stencil generate",
+    "generate:provider": "node scripts/new-provider.js",
+    "instrument": "npx nyc instrument dist --in-place",
+    "min:theme.default": "cleancss -o themes/default.css src/globals/themes/default.css",
+    "min:theme.light": "cleancss -o themes/light.css src/globals/themes/light.css",
+    "serve": "stencil build --dev --watch --port 3336 --serve",
+    "serve:prod": "sirv --single playground/index.html --cors --port 3444",
+    "test:e2e": "start-server-and-test serve http://localhost:3336 cy:run",
+    "test:e2e.ci": "start-server-and-test serve:prod http://localhost:3444 cy:run.ci",
+    "test:unit": "stencil test src --spec --max-workers=2",
+    "test:unit.coverage": "yarn test:unit --coverage",
+    "test:unit.debug": "npx --node-arg=\"--inspect-brk\" stencil test --spec",
+    "test:unit.watch": "stencil test src --spec --watchAll --max-workers=2"
+  },
+  "sideEffects": false,
+  "types": "dist/custom-elements/index.d.ts",
+  "version": "4.7.3"
+}

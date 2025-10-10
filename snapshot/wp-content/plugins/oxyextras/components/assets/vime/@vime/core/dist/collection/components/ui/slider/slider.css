@@ -1,0 +1,160 @@
+/**
+* @prop --vm-slider-thumb-bg: The background color of the slider thumb.
+* @prop --vm-slider-thumb-width: The width of the slider thumb.
+* @prop --vm-slider-thumb-height: The height of the slider thumb.
+* @prop --vm-slider-thumb-shadow: The shadow cast around the slider thumb.
+* @prop --vm-slider-track-height: The height of the track.
+* @prop --vm-slider-track-focused-height: The height of the track when it is focused.
+* @prop --vm-slider-track-color: The color of the track.
+* @prop --vm-slider-value-color: The color of the part of the track filled upto the current value.
+*/
+vime-slider input {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  border-radius: calc(var(--vm-slider-thumb-height) * 2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  color: var(--vm-slider-value-color);
+  display: block;
+  height: var(--vm-slider-track-height);
+  margin: 0;
+  padding: 0;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+}
+vime-slider input::-webkit-slider-runnable-track {
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--vm-slider-track-height) / 2);
+  height: var(--vm-slider-track-height);
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+  background-image: linear-gradient(to right, currentColor var(--vm-value, 0%), transparent var(--vm-value, 0%));
+  background-color: var(--vm-slider-track-color);
+}
+vime-slider input::-webkit-slider-thumb {
+  opacity: 0;
+  background: var(--vm-slider-thumb-bg);
+  border: 0;
+  border-radius: 100%;
+  position: relative;
+  transition: all 0.2s ease;
+  width: var(--vm-slider-thumb-width);
+  height: var(--vm-slider-thumb-height);
+  box-shadow: var(--vm-slider-thumb-shadow);
+  -webkit-appearance: none;
+  margin-top: calc(0px - calc(calc(var(--vm-slider-thumb-height) - var(--vm-slider-track-height)) / 2));
+}
+vime-slider input::-moz-range-track {
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--vm-slider-track-height) / 2);
+  height: var(--vm-slider-track-height);
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+  background-color: var(--vm-slider-track-color);
+}
+vime-slider input::-moz-range-thumb {
+  opacity: 0;
+  background: var(--vm-slider-thumb-bg);
+  border: 0;
+  border-radius: 100%;
+  position: relative;
+  transition: all 0.2s ease;
+  width: var(--vm-slider-thumb-width);
+  height: var(--vm-slider-thumb-height);
+  box-shadow: var(--vm-slider-thumb-shadow);
+}
+vime-slider input::-moz-range-progress {
+  background: currentColor;
+  border-radius: calc(var(--vm-slider-track-height) / 2);
+  height: var(--vm-slider-track-height);
+}
+vime-slider input::-ms-track {
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--vm-slider-track-height) / 2);
+  height: var(--vm-slider-track-height);
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+  color: transparent;
+  background-color: var(--vm-slider-track-color);
+}
+vime-slider input::-ms-fill-upper {
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--vm-slider-track-height) / 2);
+  height: var(--vm-slider-track-height);
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+}
+vime-slider input::-ms-fill-lower {
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--vm-slider-track-height) / 2);
+  height: var(--vm-slider-track-height);
+  transition: box-shadow 0.3s ease;
+  user-select: none;
+  background: currentColor;
+}
+vime-slider input::-ms-thumb {
+  opacity: 0;
+  background: var(--vm-slider-thumb-bg);
+  border: 0;
+  border-radius: 100%;
+  position: relative;
+  transition: all 0.2s ease;
+  width: var(--vm-slider-thumb-width);
+  height: var(--vm-slider-thumb-height);
+  box-shadow: var(--vm-slider-thumb-shadow);
+  margin-top: 0;
+}
+vime-slider input::-ms-tooltip {
+  display: none;
+}
+vime-slider input:hover::-webkit-slider-runnable-track {
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input:hover::-moz-range-track {
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input:hover::-ms-track {
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input:hover::-ms-fill-upper {
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input:hover::-ms-fill-lower {
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+vime-slider input:hover::-moz-range-thumb {
+  opacity: 1;
+}
+vime-slider input:hover::-ms-thumb {
+  opacity: 1;
+}
+vime-slider input:focus {
+  outline: 0;
+}
+vime-slider input:focus::-webkit-slider-runnable-track {
+  outline: 0;
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input:focus::-moz-range-track {
+  outline: 0;
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input:focus::-ms-track {
+  outline: 0;
+  height: var(--vm-slider-track-focused-height);
+}
+vime-slider input::-moz-focus-outer {
+  border: 0;
+}

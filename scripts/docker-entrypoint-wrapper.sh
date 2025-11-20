@@ -1,13 +1,6 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "=== DEBUG ENV VARS ==="
-echo "WORDPRESS_DB_HOST=$WORDPRESS_DB_HOST"
-echo "WORDPRESS_DB_USER=$WORDPRESS_DB_USER"
-echo "WORDPRESS_DB_NAME=$WORDPRESS_DB_NAME"
-echo "WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD:0:4}***"  # non stampare tutta la password
-
-
 WP_PATH="/var/www/html"
 CONTENT_FILE="/tmp/content.wpress"
 MARKER="$WP_PATH/.wpress_imported"
